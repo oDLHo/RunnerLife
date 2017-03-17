@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { CollectionPage } from '../collection/collection';
+import { SkillsPage } from '../skills/skills';
+import { SettingPage } from '../setting/setting';
 /*
   Generated class for the Userinfo page.
 
@@ -19,4 +22,19 @@ export class UserinfoPage {
     console.log('ionViewDidLoad UserinfoPage');
   }
 
+  goToSkill(){
+    this.navCtrl.push(SkillsPage);
+  }
+  
+  goToCollection(){
+    this.navCtrl.push(CollectionPage);
+  }
+
+  goToGacha(){
+    this.navCtrl.push(SkillsPage);
+  }
+
+  goToSetting(){
+    this.navCtrl.push(SettingPage);
+  }
 }

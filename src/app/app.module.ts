@@ -5,14 +5,17 @@ import { HomePage } from '../pages/home/home';
 import { CollectionPage } from '../pages/collection/collection'
 import { SkillsPage } from '../pages/skills/skills';
 import { UserinfoPage } from '../pages/userinfo/userinfo';
-
+import { RegisterPage } from '../pages/register/register';
+import { SettingPage } from '../pages/setting/setting';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     CollectionPage,
     SkillsPage,
-    UserinfoPage
+    UserinfoPage,
+    RegisterPage,
+    SettingPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -23,7 +26,9 @@ import { UserinfoPage } from '../pages/userinfo/userinfo';
     HomePage,
     CollectionPage,
     SkillsPage,
-    UserinfoPage
+    UserinfoPage,
+    RegisterPage,
+    SettingPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
