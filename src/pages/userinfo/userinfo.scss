@@ -1,4 +1,8 @@
 page-userinfo {
+    
+    ion-title{
+        text-align: center;
+    }
 
     ion-row{
         text-align: center;
@@ -6,11 +10,12 @@ page-userinfo {
     }
     
     .nav-row{      
-        align-content: center;
+        align-self: center;
     }
 
     .user-details{
         margin: 0px;
+        
     }
 
     .exp-bar{
