@@ -7,14 +7,54 @@
 <ion-header>
 
   <ion-navbar transparent>
-    <ion-title>User Informations</ion-title>
+    <ion-title> oDLHo </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="goToSkill()">Skill</button>
+  <!--<button ion-button (click)="goToSkill()">Skill</button>
   <button ion-button (click)="goToCollection()">Collection</button>
   <button ion-button (click)="goToGacha()">Gachapong</button>
-  <button ion-button (click)="goToSetting()">Setting</button>
+  <button ion-button (click)="goToSetting()">Setting</button>-->
+  <ion-grid>
+  <ion-row nowrap class="info-row">
+    <ion-col col-3>
+      <ion-avatar item-left>
+        <img src="../../assets/image/skills/">
+      </ion-avatar>
+    </ion-col>
+    <ion-col col-9>
+      <ion-row nowrap>
+        <p class="user-details"> Lv. 20 </p>
+      </ion-row>
+      <ion-row>
+        <p class="user-details"> Exp </p>
+        <div class="exp-bar"> 50% </div>
+      </ion-row>
+      <ion-row>
+        <p class="user-details">Total Distance :</p>
+        <p class="user-details">Today Distance : </p>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-row class="nav-row">
+    <ion-col col-12>
+      <button ion-button (click)="goToSkill()">Skills</button>
+      <button ion-button (click)="goToCollection()">Collection</button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="coin-row">
+    <ion-col col-4><img src="" alt=""> x 10</ion-col>
+    <ion-col col-4><img src="" alt=""> x 10</ion-col>
+    <ion-col col-4><img src="" alt=""> x 10</ion-col>
+  </ion-row>
+  <ion-row class="nav-row">
+    <button ion-button (click)="goToCollection()"> Inventory </button>
+  </ion-row>
+  <ion-row>
+    <button ion-button (click)="goToGacha()"> Gachapong </button>
+  </ion-row>
+</ion-grid>
+
 </ion-content>

@@ -1,3 +1,27 @@
 page-userinfo {
 
+    ion-row{
+        text-align: center;
+
+    }
+    
+    .nav-row{      
+        align-content: center;
+    }
+
+    .user-details{
+        margin: 0px;
+    }
+
+    .exp-bar{
+        text-align: center;
+        margin-left: 5px;
+        background-color: blue;
+        color: red;
+        border-color: black;
+        border-width: 1px 1px 1px 1px;
+        width: 80%;
+        height: 20%;
+    }
+
 }
