@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 import { PopoverController } from 'ionic-angular';
 import { NavController } from 'ionic-angular';
 import { ViewController } from 'ionic-angular';
-
-import { CollectionPage } from '../collection/collection';
-import { SkillsPage } from '../skills/skills';
 import { RegisterPage } from '../register/register';
 @Component({
   selector: 'page-home',
@@ -25,11 +22,4 @@ export class HomePage {
       ev: myEvent
     });
   }
-
-  close(){
-    this.viewCtrl.dismiss();
-  }
-  
-
-
 }

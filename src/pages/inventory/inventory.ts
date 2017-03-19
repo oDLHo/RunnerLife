@@ -2,24 +2,21 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 /*
-  Generated class for the Gachapong page.
+  Generated class for the Inventory page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-gachapong',
-  templateUrl: 'gachapong.html'
+  selector: 'page-inventory',
+  templateUrl: 'inventory.html'
 })
-export class GachapongPage {
+export class InventoryPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad GachapongPage');
+    console.log('ionViewDidLoad InventoryPage');
   }
 
-  exchangeCoin(coin : string){
-    
-  }
 }

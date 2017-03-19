@@ -1,3 +1,4 @@
+import { InventoryPage } from './../inventory/inventory';
 import { GachapongPage } from './../gachapong/gachapong';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
@@ -37,5 +38,9 @@ export class UserinfoPage {
 
   goToSetting(){
     this.navCtrl.push(SettingPage);
+  }
+
+  goToInventory(){
+    this.navCtrl.push(InventoryPage);
   }
 }

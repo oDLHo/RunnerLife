@@ -1,6 +1,5 @@
 .main-content {
     text-align: center;
-    size: 100%;
 }
 
 .start-button{
@@ -11,6 +10,12 @@
 }
 
 page-home {
-
+ 
+    .main-content {
+        background-image: url('../../assets/image/background/mainbg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;    
+    }
 }
 

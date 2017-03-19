@@ -1,3 +1,4 @@
+import { InventoryPage } from './../pages/inventory/inventory';
 import { GachapongPage } from './../pages/gachapong/gachapong';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -18,7 +19,8 @@ import { SettingPage } from '../pages/setting/setting';
     UserinfoPage,
     RegisterPage,
     SettingPage,
-    GachapongPage
+    GachapongPage,
+    InventoryPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -32,7 +34,8 @@ import { SettingPage } from '../pages/setting/setting';
     UserinfoPage,
     RegisterPage,
     SettingPage,
-    GachapongPage
+    GachapongPage,
+    InventoryPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
