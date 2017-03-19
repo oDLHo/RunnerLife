@@ -1,9 +1,3 @@
-<!--
-  Generated template for the Collection page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar transparent>
@@ -13,14 +7,25 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-grid>
+<ion-content class="pic-slider" padding>
+  <ion-grid >
     <ion-row>
-      <ion-col col-3> This column will take 12 columns </ion-col>
-      <ion-col col-3>  </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col-6>This column will take 6 columns</ion-col>
+      <ion-col class="slider-box"> 
+        <ion-slides>
+          <ion-slide>
+            <label class="img-name" for="slider-image"><p>Slide 1</p></label>
+            <img class="slider-image" src="https://wallpaperbrowse.com/media/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg" alt="">
+          </ion-slide>
+          <ion-slide>
+             <label class="img-name" for="slider-image"><p>Slide 2</p></label><br>
+            <img class="slider-image" src="https://s-media-cache-ak0.pinimg.com/736x/78/b1/96/78b1965dbb8d754bbeb6f9a1addf0d4f.jpg" alt="">
+          </ion-slide>
+          <ion-slide>
+             <label class="img-name" for="slider-image"><p>Slide 3</p></label><br>
+            <img class="slider-image" src="https://s-media-cache-ak0.pinimg.com/736x/e8/ab/6d/e8ab6df40742e7f9ed58a0a4fbac2160.jpg" alt="">
+          </ion-slide>
+       </ion-slides>
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

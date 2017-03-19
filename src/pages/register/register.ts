@@ -11,8 +11,6 @@ import { UserinfoPage } from '../userinfo/userinfo';
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-register',
-  templateUrl: 'register.html',
   template: `
       <button ion-button color="primary" (click)="close()">Login with Facebook</button><br>
       <button ion-button color="danger" (click)="close()">Login with Google</button><br>

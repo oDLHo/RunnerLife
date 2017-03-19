@@ -1,3 +1,4 @@
+import { GachapongPage } from './../gachapong/gachapong';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -31,7 +32,7 @@ export class UserinfoPage {
   }
 
   goToGacha(){
-    this.navCtrl.push(SkillsPage);
+    this.navCtrl.push(GachapongPage);
   }
 
   goToSetting(){

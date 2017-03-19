@@ -1,3 +1,4 @@
+import { GachapongPage } from './../pages/gachapong/gachapong';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -7,6 +8,7 @@ import { SkillsPage } from '../pages/skills/skills';
 import { UserinfoPage } from '../pages/userinfo/userinfo';
 import { RegisterPage } from '../pages/register/register';
 import { SettingPage } from '../pages/setting/setting';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -15,7 +17,8 @@ import { SettingPage } from '../pages/setting/setting';
     SkillsPage,
     UserinfoPage,
     RegisterPage,
-    SettingPage
+    SettingPage,
+    GachapongPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -28,7 +31,8 @@ import { SettingPage } from '../pages/setting/setting';
     SkillsPage,
     UserinfoPage,
     RegisterPage,
-    SettingPage
+    SettingPage,
+    GachapongPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

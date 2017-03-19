@@ -18,5 +18,8 @@
   ion-header::after {
     background: transparent;
     background-image: none !important;
-    
+  }
+
+  ion-title{
+    text-align: center;
   }
