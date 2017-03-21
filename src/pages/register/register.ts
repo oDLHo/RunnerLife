@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ViewController } from 'ionic-angular';
 
-import { SkillsPage } from '../skills/skills';
 import { UserinfoPage } from '../userinfo/userinfo';
 /*
   Generated class for the Register page.
@@ -11,11 +10,9 @@ import { UserinfoPage } from '../userinfo/userinfo';
   Ionic pages and navigation.
 */
 @Component({
-  template: `
-      <button ion-button color="primary" (click)="close()">Login with Facebook</button><br>
-      <button ion-button color="danger" (click)="close()">Login with Google</button><br>
-      <button ion-button color="primary" (click)="close()">Login as Guest</button>
-  `
+    selector: 'page-register',
+    templateUrl: 'register.html'
+
 })
 export class RegisterPage {
 
@@ -26,7 +23,6 @@ export class RegisterPage {
   }
 
   close(){
-    this.viewCtrl.dismiss();
     this.navCtrl.setRoot(UserinfoPage);
   }
 

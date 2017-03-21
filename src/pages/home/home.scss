@@ -7,15 +7,22 @@
     top: 85%;
     left: 50%;
     transform:translate(-50%,0%);
+    color: black;
+    font-size: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 20px;
 }
+
+
 
 page-home {
  
     .main-content {
-        background-image: url('../../assets/image/background/mainbg.jpg');
-        background-repeat: no-repeat;
+        background-image: url('../../assets/image/background/homebg.png');
         background-size: cover;
-        background-position: center;    
+        background-position: center; 
     }
 }
 
