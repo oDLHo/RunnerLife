@@ -2,7 +2,7 @@ import { InventoryPage } from './../inventory/inventory';
 import { GachapongPage } from './../gachapong/gachapong';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { AuthService } from './../../providers/auth-service';
 import { CollectionPage } from '../collection/collection';
 import { SkillsPage } from '../skills/skills';
 import { SettingPage } from '../setting/setting';
@@ -18,7 +18,7 @@ import { SettingPage } from '../setting/setting';
 })
 export class UserinfoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _auth: AuthService) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserinfoPage');
