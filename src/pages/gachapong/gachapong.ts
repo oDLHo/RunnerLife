@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 import { AuthService } from './../../providers/auth-service';
 /*
   Generated class for the Gachapong page.
@@ -12,32 +12,23 @@ import { AuthService } from './../../providers/auth-service';
   selector: 'page-gachapong',
   templateUrl: 'gachapong.html'
 })
-export class GachapongPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private af: AngularFire, private _auth: AuthService) {}
+export class GachapongPage {
+  coins : FirebaseObjectObservable<any[]>;
+  uid : any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private af: AngularFire, private _auth: AuthService) {
+    this.uid = this.navParams.get('uid');
+    this.coins = af.database.object('user/'+this.uid);
+  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad GachapongPage');
+    console.log("gacha uid is "+this.uid);
   }
 
-  addBronze(){
-    this.af.database.object(`user/odlho/coin/bronze`).$ref
-    .ref.transaction(bronze => {
-            return bronze + 1;
-    })
-  }
-
-  addSilver(){
-    this.af.database.object(`user/odlho/coin/silver`).$ref
-    .ref.transaction(silver => {
-            return silver + 1;
-    })
-  }
-
-  addGold(){
-    this.af.database.object(`user/odlho/coin/gold`).$ref
-    .ref.transaction(gold => {
-            return gold + 1;
+  addCoin(coinType : string){
+    this.af.database.object('user/'+this.uid+'/coin/'+coinType).$ref
+    .ref.transaction(coinType => {
+            return coinType + 1;
     })
   }
 }

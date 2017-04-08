@@ -7,17 +7,12 @@
 <ion-header>
 
   <ion-navbar transparent>
-    <ion-title> <ion-icon name="ios-contact" item-left style="margin-right: 10px;"></ion-icon> oDLHo </ion-title>
+    <ion-title> <ion-icon name="ios-contact" item-left style="margin-right: 10px;"></ion-icon> {{ (user | async)?.displayName }} </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
-  <!--<button ion-button (click)="goToSkill()">Skill</button>
-  <button ion-button (click)="goToCollection()">Collection</button>
-  <button ion-button (click)="goToGacha()">Gachapong</button>
-  <button ion-button (click)="goToSetting()">Setting</button>-->
-
     <ion-grid>
         <ion-row nowrap class="info-row">
             <ion-col col-3>
@@ -27,20 +22,20 @@
             </ion-col>
             <ion-col col-9>
                 <ion-row nowrap>
-                    <p class="user-details"> Lv. 20 </p>
+                    <p class="user-details"> Lv. {{ (user | async)?.lv }} </p>
                 </ion-row>
                 <ion-row>
                     <p class="user-details"> Exp </p>
                     <div class="exp-box"> 
                         
-                        <div class="exp-bar">50%  </div>
+                        <div class="exp-bar"> {{ (user | async)?.exp }} %  </div>
                     </div>
                 </ion-row>
                 <ion-row>
-                    <p class="user-details">Total Distance : 204 Km</p>
+                    <p class="user-details">Total Distance : {{ (user | async)?.totalDistance }} Km</p>
                 </ion-row>
                 <ion-row>
-                    <p class="user-details">Today Distance : 4 Km</p>
+                    <p class="user-details">Today Distance : {{ (user | async)?.todayDistance }} Km</p>
                 </ion-row>
             </ion-col>
         </ion-row>
@@ -54,9 +49,9 @@
             
         </ion-row>
         <ion-row class="coin-row">
-            <ion-col col-4><img src="../../assets/image/coinb.png" class="coin"> x 10</ion-col>
-            <ion-col col-4><img src="../../assets/image/coins.png" class="coin"> x 10</ion-col>
-            <ion-col col-4><img src="../../assets/image/coing.png" class="coin"> x 10</ion-col>
+            <ion-col col-4><img src="../../assets/image/coinb.png" class="coin"> x {{ (user | async)?.coin.bronze }}</ion-col>
+            <ion-col col-4><img src="../../assets/image/coins.png" class="coin"> x {{ (user | async)?.coin.silver }}</ion-col>
+            <ion-col col-4><img src="../../assets/image/coing.png" class="coin"> x {{ (user | async)?.coin.gold }}</ion-col>
         </ion-row>
     </ion-grid>
 

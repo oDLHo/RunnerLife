@@ -13,12 +13,12 @@ import { SettingPage } from '../pages/setting/setting';
 import { AngularFireModule } from 'angularfire2';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyCjwmBiJl170E68GsJktvIhxK6O2GD-eV8",
-  authDomain: "runnerlife-3b67f.firebaseapp.com",
-  databaseURL: "https://runnerlife-3b67f.firebaseio.com",
-  projectId: "runnerlife-3b67f",
-  storageBucket: "runnerlife-3b67f.appspot.com",
-  messagingSenderId: "46089078531"
+    apiKey: "AIzaSyD9FTWA3r-xOHoW1jqjNmF1ZcqoO66tRJM",
+    authDomain: "runnerlifeapp.firebaseapp.com",
+    databaseURL: "https://runnerlifeapp.firebaseio.com",
+    projectId: "runnerlifeapp",
+    storageBucket: "runnerlifeapp.appspot.com",
+    messagingSenderId: "555438946086"
 };
 
 @NgModule({

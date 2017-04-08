@@ -1,3 +1,5 @@
+import { AuthService } from './../../providers/auth-service';
+import { AngularFire } from 'angularfire2';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -12,11 +14,13 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'inventory.html'
 })
 export class InventoryPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  uid: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire, public _auth: AuthService) {
+    this.uid = navParams.get('uid');
+  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad InventoryPage');
+    console.log("inventory uid is "+this.uid);
   }
 
 }

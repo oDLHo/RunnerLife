@@ -1,3 +1,4 @@
+import { FirebaseObjectObservable, AngularFire } from 'angularfire2';
 import { InventoryPage } from './../inventory/inventory';
 import { GachapongPage } from './../gachapong/gachapong';
 import { Component } from '@angular/core';
@@ -17,30 +18,34 @@ import { SettingPage } from '../setting/setting';
   templateUrl: 'userinfo.html'
 })
 export class UserinfoPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _auth: AuthService) {}
+  user : FirebaseObjectObservable<any[]>;
+  uid : any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private af: AngularFire, private _auth: AuthService) {
+    this.user = this.af.database.object('user/'+this._auth.facebookUID());
+    this.uid = this._auth.facebookUID();
+  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad UserinfoPage');
+    console.log("uid is "+this.uid);
   }
 
   goToSkill(){
-    this.navCtrl.push(SkillsPage);
+    this.navCtrl.push(SkillsPage,{uid : this.uid});
   }
   
   goToCollection(){
-    this.navCtrl.push(CollectionPage);
+    this.navCtrl.push(CollectionPage,{uid : this.uid});
   }
 
   goToGacha(){
-    this.navCtrl.push(GachapongPage);
+    this.navCtrl.push(GachapongPage,{uid : this.uid});
   }
 
   goToSetting(){
-    this.navCtrl.push(SettingPage);
+    this.navCtrl.push(SettingPage,{uid : this.uid});
   }
 
   goToInventory(){
-    this.navCtrl.push(InventoryPage);
+    this.navCtrl.push(InventoryPage,{uid : this.uid});
   }
 }

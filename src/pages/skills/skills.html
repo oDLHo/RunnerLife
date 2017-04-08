@@ -12,58 +12,14 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item>
+    <ion-item class="text" *ngFor="let skill of skills | async">
       <ion-avatar item-left>
         <img src="../../assets/image/skills/oil_tank.png">
       </ion-avatar>
-      <h2>Water Tank</h2>
-      <p>Gain more exerience from distance.</p>
-      <p>Level 2</p><button ion-button>Level Up</button>
-    </ion-item>
-
-    <ion-item>
-      <ion-avatar item-left>
-        <img src="../../assets/image/skills/pick.png">
-      </ion-avatar>
-      <h2>Pick Pocket</h2>
-      <p>Increase chance to get rarity coin when sprint running.</p>
-      <p>Level 2</p><button ion-button>Level Up</button>
-    </ion-item>
-
-    <ion-item>
-      <ion-avatar item-left>
-        <img src="../../assets/image/skills/run.png">
-      </ion-avatar>
-      <h2>Sprint</h2>
-      <p>Gain more experience from sprint running.</p>
-      <p>Level 2</p><button ion-button>Level Up</button>
-    </ion-item>
-
-    <ion-item>
-      <ion-avatar item-left>
-        <img src="../../assets/image/skills/win.png">
-      </ion-avatar>
-      <h2>Slow and steady wins the race</h2>
-      <p>Get more coin when find it.</p>
-      <p>Level 2</p><button ion-button>Level Up</button>
-    </ion-item>
-
-    <ion-item>
-      <ion-avatar item-left>
-        <img src="../../assets/image/skills/gamble1.png">
-      </ion-avatar>
-      <h2>Gambler</h2>
-      <p>Increase chance to get rarity coin</p>
-      <p>Level 2</p><button ion-button>Level Up</button>
-    </ion-item>
-
-    <ion-item>
-      <ion-avatar item-left>
-        <img src="../../assets/image/skills/gamble2.png">
-      </ion-avatar>
-      <h2>No More!</h2>
-      <p>Reduce chance to get duplicate jigsaw.</p>
-      <p>Level 2</p><button ion-button>Level Up</button>
+      <h2> {{ skill.displayName }} </h2>
+      <p> {{ skill.description }} </p>
+      <p> Level {{ skill.level }} </p>
+      <button ion-button (click) = "increaseSkillLevel(skill.$key)" >Level Up</button>
     </ion-item>
   </ion-list>
 </ion-content>
