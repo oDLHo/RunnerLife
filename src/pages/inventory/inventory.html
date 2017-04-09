@@ -12,59 +12,31 @@
 
 
 <ion-content padding>
-  <ion-list>
-    <ion-list-header> <p style="color: black">Unknow2</p> <p style="color: black" item-right> 0/4 </p> </ion-list-header>
-    <ion-item>
-      <ion-icon name="leaf" item-left></ion-icon>
-      1st Jigsaw
-    </ion-item>
-    <ion-item>
-      <ion-icon name="leaf" item-left></ion-icon>
-      2nd Jigsaw
-    </ion-item>
-    <ion-item>
-      <ion-icon name="leaf" item-left></ion-icon>
-      3th Jigsaw
-    </ion-item>
-    <ion-item>
-      <ion-icon name="leaf" item-left></ion-icon>
-      4th Jigsaw
-    </ion-item>
+  <ion-list *ngFor="let inventory of inventorys | async">
 
-    <ion-list-header> <p style="color: black">Unknow2</p> <p style="color: black" item-right> 0/4 </p> </ion-list-header>
+    <ion-item> 
+      <p style="color: black"> {{inventory.displayName}} </p> 
+      <p style="color: black" item-right> 0/4 </p> 
+    </ion-item>
     <ion-item>
       <ion-icon name="leaf" item-left></ion-icon>
       1st Jigsaw
+      <p style="color: black" item-right> x {{ inventory.firstJigsaw}} </p>
     </ion-item>
     <ion-item>
       <ion-icon name="leaf" item-left></ion-icon>
       2nd Jigsaw
+      <p style="color: black" item-right> x {{ inventory.secondJigsaw}} </p>
     </ion-item>
     <ion-item>
       <ion-icon name="leaf" item-left></ion-icon>
       3th Jigsaw
+      <p style="color: black" item-right> x {{ inventory.thirdJigsaw}} </p>
     </ion-item>
     <ion-item>
       <ion-icon name="leaf" item-left></ion-icon>
       4th Jigsaw
-    </ion-item>
-
-    <ion-list-header> <p style="color: black">Unknow3</p> <p style="color: black" item-right> 0/4 </p> </ion-list-header>
-    <ion-item>
-      <ion-icon name="leaf" item-left></ion-icon>
-      1st Jigsaw
-    </ion-item>
-    <ion-item>
-      <ion-icon name="leaf" item-left></ion-icon>
-      2nd Jigsaw
-    </ion-item>
-    <ion-item>
-      <ion-icon name="leaf" item-left></ion-icon>
-      3th Jigsaw
-    </ion-item>
-    <ion-item>
-      <ion-icon name="leaf" item-left></ion-icon>
-      4th Jigsaw
+      <p style="color: black" item-right> x {{ inventory.fourthJigsaw}} </p>
     </ion-item>
 
   </ion-list>

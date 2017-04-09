@@ -28,26 +28,53 @@ export class RegisterPage {
 
   signInWithFacebook(): void {
         this._auth.signInWithFacebook()
-      .then(() =>this.validateUser(this._auth.facebookUID()))
+      .then(() =>this.validateUser(this._auth.facebookUID()));
   }
 
   private validateUser(uid: any){
     console.log("b4 validate uid : "+uid)
-    const users = this.af.database.object('users/'+uid, { preserveSnapshot: true });
-    users.subscribe(data => {
-    if(data.$value != null) {
-      this.createUser(uid);
-    } else {
-      console.log("exist");
-      this.close();
-    }
-  });
+  //   const users = this.af.database.object('/user/'+uid, { preserveSnapshot: true });
+  //   users.subscribe(data => {
+  //   if(data.exists()) {
+  //     console.log("go to create");
+  //     this.createUser(uid);
+  //   } else {
+  //     console.log("exist");
+  //     this.close();
+  //   }
+  // });
+    //   this.af.database.object('user/'+this._auth.facebookUID())
+    //   .subscribe(displayName => {
+    //   if(displayName == null){
+    //     console.log('sss : '+uid);
+    //     console.log("dispalyname null na ja : "+displayName);
+    //     return this.createUser(uid);
+    //   } else{
+    //     console.log('displayname Not null na ja : '+displayName);
+    //     return this.close();
+    //   }
+    // });
+
+this.af.database.object('/user/' + uid).$ref.transaction(currentValue => {
+  if (currentValue === null) {
+    return this.createUser(uid);
+  } else {
+    console.log('This username is taken. Try another one');
+    return this.close();
+  }
+})
+.then( result => {
+   // Good to go, user does not exist
+   if (result.committed) {
+          console.log('Tsaasas');
+   }
+});
   }
 
 
   private createUser(uid: any){
     console.log("Facebook uid ",uid);
-          console.log("not exist");
+    console.log("not exist");
     this.user.update(uid,{
       displayName: this._auth.displayName(),
       lv : 1,
@@ -91,8 +118,34 @@ export class RegisterPage {
                   displayName: "No More!",
                   description: "Reduce chance to get duplicate jigsaw",
                   iconUrl: "../../assets/image/skills/gamble2.png"
-                  },
-              }
+                  }
+              },
+      inventory : {
+                    collection1:{
+                      displayName : "Unknow 1",
+                      firstJigsaw : 0,
+                      secondJigsaw : 0,
+                      thirdJigsaw : 0,
+                      fourthJigsaw : 0,
+                      allCollected : false
+                    },
+                    collection2:{
+                      displayName : "Unknow 2",
+                      firstJigsaw : 0,
+                      secondJigsaw : 0,
+                      thirdJigsaw : 0,
+                      fourthJigsaw : 0,
+                      allCollected : false
+                    },
+                    collection3:{
+                      displayName : "Unknow 3",
+                      firstJigsaw : 0,
+                      secondJigsaw : 0,
+                      thirdJigsaw : 0,
+                      fourthJigsaw : 0,
+                      allCollected : false
+                    },
+                  }
     }).then(() => this.close());
   }
 

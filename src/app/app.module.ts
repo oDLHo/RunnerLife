@@ -1,3 +1,4 @@
+import { Geolocation } from '@ionic-native/geolocation';
 import { AuthService } from './../providers/auth-service';
 import { InventoryPage } from './../pages/inventory/inventory';
 import { GachapongPage } from './../pages/gachapong/gachapong';
@@ -49,6 +50,6 @@ export const firebaseConfig = {
     GachapongPage,
     InventoryPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},AuthService]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},AuthService,Geolocation]
 })
 export class AppModule {}

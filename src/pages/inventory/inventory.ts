@@ -1,5 +1,5 @@
 import { AuthService } from './../../providers/auth-service';
-import { AngularFire } from 'angularfire2';
+import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -15,8 +15,10 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class InventoryPage {
   uid: any;
+  inventorys : FirebaseListObservable<any[]>;
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire, public _auth: AuthService) {
     this.uid = navParams.get('uid');
+    this.inventorys = af.database.list('user/'+this.uid+'/inventory');
   }
 
   ionViewDidLoad() {

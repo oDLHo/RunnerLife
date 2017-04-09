@@ -14,7 +14,7 @@
   <ion-list>
     <ion-item class="text" *ngFor="let skill of skills | async">
       <ion-avatar item-left>
-        <img src="../../assets/image/skills/oil_tank.png">
+        <img [src]="skill.iconUrl">
       </ion-avatar>
       <h2> {{ skill.displayName }} </h2>
       <p> {{ skill.description }} </p>
