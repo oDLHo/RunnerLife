@@ -1,3 +1,4 @@
+import { LocationService } from './../../providers/location-service';
 import { FirebaseObjectObservable, AngularFire } from 'angularfire2';
 import { InventoryPage } from './../inventory/inventory';
 import { GachapongPage } from './../gachapong/gachapong';
@@ -21,23 +22,13 @@ import { Geolocation } from '@ionic-native/geolocation';
 export class UserinfoPage {
   user : FirebaseObjectObservable<any[]>;
   uid : any;
-  la : any;
-  long : any;
-  speed : any;
-  constructor(public navCtrl: NavController,private geolocation: Geolocation, public navParams: NavParams, private af: AngularFire, private _auth: AuthService) {
+  constructor(public _locationService: LocationService, public navCtrl: NavController,private geolocation: Geolocation, public navParams: NavParams, private af: AngularFire, private _auth: AuthService) {
     this.user = this.af.database.object('user/'+this._auth.facebookUID());
     this.uid = this._auth.facebookUID();
-    this.geolocation.getCurrentPosition().then((resp) => {
-      this.la = resp.coords.latitude;
-      this.long = resp.coords.longitude;
-      this.speed = resp.coords.speed;
-    }).catch((error) => {
-      console.log('Error getting location', error);
-    });
   }
 
   ionViewDidLoad() {
-    console.log("Geolocation la : "+this.la+" long : "+this.long+" speed : "+this.speed);
+    this._locationService.getWatchLocation(this.uid);
     console.log("uid is "+this.uid);
   }
 

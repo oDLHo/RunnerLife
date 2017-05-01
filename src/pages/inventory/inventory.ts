@@ -1,5 +1,5 @@
 import { AuthService } from './../../providers/auth-service';
-import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2';
+import { AngularFire,  FirebaseListObservable } from 'angularfire2';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
