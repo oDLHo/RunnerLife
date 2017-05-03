@@ -31,44 +31,19 @@ export class RegisterPage {
       .then(() =>this.validateUser(this._auth.facebookUID()));
   }
 
-  private validateUser(uid: any){
+  private validateUser(uid ){
     console.log("b4 validate uid : "+uid)
-  //   const users = this.af.database.object('/user/'+uid, { preserveSnapshot: true });
-  //   users.subscribe(data => {
-  //   if(data.exists()) {
-  //     console.log("go to create");
-  //     this.createUser(uid);
-  //   } else {
-  //     console.log("exist");
-  //     this.close();
-  //   }
-  // });
-    //   this.af.database.object('user/'+this._auth.facebookUID())
-    //   .subscribe(displayName => {
-    //   if(displayName == null){
-    //     console.log('sss : '+uid);
-    //     console.log("dispalyname null na ja : "+displayName);
-    //     return this.createUser(uid);
-    //   } else{
-    //     console.log('displayname Not null na ja : '+displayName);
-    //     return this.close();
-    //   }
-    // });
-
-this.af.database.object('/user/' + uid).$ref.transaction(currentValue => {
-  if (currentValue === null) {
-    return this.createUser(uid);
-  } else {
-    console.log('This username is taken. Try another one');
-    return this.close();
-  }
-})
-.then( result => {
-   // Good to go, user does not exist
-   if (result.committed) {
-          console.log('Tsaasas');
-   }
-});
+    
+   let users = this.af.database.object('/user/'+uid+"/displayName", { preserveSnapshot: true });
+    users.subscribe(data => {
+      if(!data.exists()) {
+       console.log("go to create");
+       this.createUser(uid);
+      } else {
+        console.log("exist");
+       this.close();
+     }
+    });
   }
 
 

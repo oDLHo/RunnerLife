@@ -13,6 +13,8 @@ import { UserinfoPage } from '../pages/userinfo/userinfo';
 import { RegisterPage } from '../pages/register/register';
 import { SettingPage } from '../pages/setting/setting';
 import { AngularFireModule } from 'angularfire2';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyD9FTWA3r-xOHoW1jqjNmF1ZcqoO66tRJM",
@@ -51,6 +53,6 @@ export const firebaseConfig = {
     GachapongPage,
     InventoryPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},AuthService,LocationService,Geolocation]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},AuthService,LocationService,Geolocation,StatusBar,SplashScreen]
 })
 export class AppModule {}

@@ -27,6 +27,7 @@ export class LocationService {
   }
 
   getWatchLocation(uid){
+    
     let watch = this.geolocation.watchPosition();
     
       watch.subscribe((data) => {
