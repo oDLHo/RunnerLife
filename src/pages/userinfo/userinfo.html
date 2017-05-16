@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar transparent>
-    <ion-title> <ion-icon name="ios-contact" item-left style="margin-right: 10px;"></ion-icon> {{ (user | async)?.displayName }} </ion-title>
+    <ion-title> <ion-icon name="ios-contact" item-left style="margin-right: 10px;"></ion-icon> {{ (user | async)?.displayName }} <ion-icon name="ios-settings" item-right style="margin-left: 20px" (click)="goToSetting()"> </ion-icon> </ion-title>
   </ion-navbar>
 
 </ion-header>

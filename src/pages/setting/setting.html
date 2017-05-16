@@ -6,8 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-      
+  <ion-navbar transparent>
     <ion-title><ion-icon name="md-options" item-left style="margin-right: 10px;"></ion-icon> setting </ion-title>
   </ion-navbar>
 
@@ -16,7 +15,7 @@
 
 <ion-content padding>
   <ion-list>
-   <ion-item>
+   <ion-item >
     <ion-icon name="ios-musical-notes" item-left></ion-icon>
     <ion-label> Sound</ion-label>
     <ion-toggle checked="false"></ion-toggle>
@@ -31,5 +30,6 @@
     <ion-label> Vibration</ion-label>
     <ion-toggle checked="false"></ion-toggle>
    </ion-item>
+    <button ion-button (click)="signOut()" style="width:100%"><ion-icon name="logo-facebook" item-left style="margin-right: 10px;"></ion-icon>Sign out from facebook</button>
   </ion-list>
 </ion-content>

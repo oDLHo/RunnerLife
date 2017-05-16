@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { AuthService } from './../../providers/auth-service';
+import { HomePage } from './../home/home';
 /*
   Generated class for the Setting page.
 
@@ -13,10 +14,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class SettingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _auth: AuthService) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingPage');
+  }
+
+  signOut(){
+    this._auth.signOut();
+    this.navCtrl.setRoot(HomePage);
   }
 
 }
