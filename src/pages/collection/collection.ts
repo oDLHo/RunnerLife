@@ -16,11 +16,11 @@ import { NavController, NavParams } from 'ionic-angular';
 export class CollectionPage {
   uid: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire, public _auth: AuthService ) {
-    this.uid = this.navParams.get('uid');
+    // this.uid = this.navParams.get('uid');
   }
 
   ionViewDidLoad() {
-    console.log("inventory uid is "+this.uid);
+    // console.log("inventory uid is "+this.uid);
   }
 
 }

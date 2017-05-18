@@ -14,26 +14,26 @@
 <ion-content padding>
   <ion-list *ngFor="let inventory of inventorys | async">
 
-    <ion-item> 
+    <ion-item class="item-transparent"> 
       <p style="color: black"> {{inventory.displayName}} </p> 
       <p style="color: black" item-right> {{ inventory.firstJigsaw + inventory.secondJigsaw + inventory.thirdJigsaw + inventory.fourthJigsaw }}/4 </p> 
     </ion-item>
-    <ion-item>
+    <ion-item class="item-transparent">
       <ion-icon name="leaf" item-left></ion-icon>
       1st Jigsaw
       <p style="color: black" item-right> x {{ inventory.firstJigsaw}} </p>
     </ion-item>
-    <ion-item>
+    <ion-item class="item-transparent">
       <ion-icon name="leaf" item-left></ion-icon>
       2nd Jigsaw
       <p style="color: black" item-right> x {{ inventory.secondJigsaw}} </p>
     </ion-item>
-    <ion-item>
+    <ion-item class="item-transparent">
       <ion-icon name="leaf" item-left></ion-icon>
       3th Jigsaw
       <p style="color: black" item-right> x {{ inventory.thirdJigsaw}} </p>
     </ion-item>
-    <ion-item>
+    <ion-item class="item-transparent">
       <ion-icon name="leaf" item-left></ion-icon>
       4th Jigsaw
       <p style="color: black" item-right> x {{ inventory.fourthJigsaw}} </p>
