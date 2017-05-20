@@ -1,5 +1,7 @@
 This Project is a part of class project of ITCS424 - Wireless and Mobile Computing
 
+In order to login it has to use facebook authentication and also facebook id that added into tester user.
+
 Our group member
 
 Mr.Nuntapob Puttawong 5788080 sec 
