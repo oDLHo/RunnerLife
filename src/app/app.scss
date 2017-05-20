@@ -27,3 +27,7 @@
   ion-content{
     background-image: url("../assets/image/background/allbg.jpg"); 
   }
+
+     .no-scroll .scroll-content{
+         overflow: hidden;
+    }
