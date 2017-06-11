@@ -17,12 +17,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyD9FTWA3r-xOHoW1jqjNmF1ZcqoO66tRJM",
-    authDomain: "runnerlifeapp.firebaseapp.com",
-    databaseURL: "https://runnerlifeapp.firebaseio.com",
-    projectId: "runnerlifeapp",
-    storageBucket: "runnerlifeapp.appspot.com",
-    messagingSenderId: "555438946086"
+    apiKey: "xxxxxxxxxxxxxxx",
+    authDomain: "xxxxxxxxxxxxxxxxxxxxx",
+    databaseURL: "xxxxxxxxxxxxxxxxx",
+    projectId: "xxxxxxxxxxxxxxxx",
+    storageBucket: "xxxxxxxxxxxxxxxxxxxx",
+    messagingSenderId: "xxxxxxxxxxxxxxxxxx"
 };
 
 @NgModule({
