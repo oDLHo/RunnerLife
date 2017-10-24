@@ -6,9 +6,9 @@ Develop by using Ionic Framework 2 with Firebase Database.
 
 In order to login it has to use facebook authentication which facebook id that added to tester list.
 
-### Group member
+## Group member
 
-* Mr.Nuntapob Puttawong 5788080 sec 
+* Mr.Nuntapob Puttawong 5788080 sec 3
 
 * Mr.Jirayu Roungsuriyaviboon 5788126 sec 3
 
