@@ -1,7 +1,7 @@
 # RunnerLife
 
-This Project is a part of class project of ITCS424 - Wireless and Mobile Computing
-Cross platform mobile application created for encourage people to exercise. 
+This Project is a part of class project of ITCS424 - Wireless and Mobile Computing. 
+The cross platform mobile application created for encourage people to exercise. 
 Develop by using Ionic Framework 2 with Firebase Database.
 
 In order to login it has to use facebook authentication which facebook id that added to tester list.
